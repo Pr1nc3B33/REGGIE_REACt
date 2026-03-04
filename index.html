@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .profile-image {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      @media (max-width: 576px) {
+        .profile-image {
+          width: 130px;
+          height: 130px;
+        }
+      }
+    </style>
+    <title>spa-router-bootstrap</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" aria-label="Primary navigation">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#home">MySite</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#home" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container py-5" id="home">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <h2 class="mb-4">Registration Form</h2>
+          <form class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" autocomplete="given-name" />
+              </div>
+              <div class="col-md-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" autocomplete="family-name" />
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" autocomplete="email" required />
+                <div class="invalid-feedback">Please enter a valid email.</div>
+              </div>
+
+              <div class="col-12">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" autocomplete="new-password" required />
+                <div class="invalid-feedback">Password is required.</div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="terms" required />
+                  <label class="form-check-label" for="terms">
+                    I agree to the terms and conditions
+                  </label>
+                  <div class="invalid-feedback">You must agree before submitting.</div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-success">Submit</button>
+              </div>
+            </div>
+          </form>
+
+          <h3 class="mt-5 mb-3">Submitted Users</h3>
+          <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Avery</td>
+                  <td>Johnson</td>
+                  <td>avery.johnson@example.com</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Maya</td>
+                  <td>Patel</td>
+                  <td>maya.patel@example.com</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Noah</td>
+                  <td>Kim</td>
+                  <td>noah.kim@example.com</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>Elena</td>
+                  <td>Garcia</td>
+                  <td>elena.garcia@example.com</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid px-0" id="about">
+      <img
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80"
+        class="img-fluid w-100"
+        alt="Panoramic mountain landscape"
+      />
+
+      <div class="text-center py-4">
+        <img
+          src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80"
+          class="img-fluid rounded-circle profile-image"
+          alt="Portrait profile image"
+        />
+
+        <div class="d-flex justify-content-center gap-2 mt-4">
+          <button type="button" class="btn btn-primary">Visible on All Screens</button>
+          <button type="button" class="btn btn-secondary d-none d-md-block">Hidden on Small Screens</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-5" id="contact">
+      <h3 class="mb-3">Contact</h3>
+      <p class="mb-0">Email us at contact@example.com or call (555) 123-4567.</p>
+    </div>
+
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      (() => {
+        'use strict';
+        const forms = document.querySelectorAll('.needs-validation');
+
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            'submit',
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add('was-validated');
+            },
+            false,
+          );
+        });
+      })();
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
